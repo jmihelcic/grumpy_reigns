@@ -1,0 +1,147 @@
+/**
+ * Created by mihelcic on 28. 08. 2016.
+ */
+
+// Card flip animation
+@keyframes {flip-left}
+  0%
+    animation-timing-function ease-in
+    transform translate3d(0,0,0) rotateY(0deg)
+  50%
+    animation-timing-function ease-out
+    transform translate3d(-96px,0,0) rotateY(90deg)
+  100%
+    transform translate3d(0,0,0) rotateY(180deg)
+
+@keyframes {flip-back-left}
+  0%
+    animation-timing-function ease-in
+    transform translate3d(0,0,0) rotateY(180deg)
+  50%
+    animation-timing-function ease-out
+    transform translate3d(-96px,0,0) rotateY(270deg)
+  100%
+    transform translate3d(0,0,0) rotateY(360deg)
+
+@keyframes {flip-right}
+  0%
+    animation-timing-function ease-in
+    transform translate3d(0,0,0) rotateY(0deg)
+  50%
+    animation-timing-function ease-out
+    transform translate3d(96px,0,0) rotateY(-90deg)
+  100%
+    transform translate3d(0,0,0) rotateY(-180deg)
+
+@keyframes {flip-back-right}
+  0%
+    animation-timing-function ease-in
+    transform translate3d(0,0,0) rotateY(-180deg)
+  50%
+    animation-timing-function ease-out
+    transform translate3d(96px,0,0) rotateY(-270deg)
+  100%
+    transform translate3d(0,0,0) rotateY(-360deg)
+
+
+.body__card-description
+  overflow hidden
+  display flex
+  flex-direction column
+  justify-content center
+  align-content center
+  width 100%
+  height 30%
+  color #000
+  font-size 16px
+  text-align center
+  .card-description__text
+    padding 0 16px
+    font-size 16px
+    font-weight 600
+    font-family "Courier New", Courier, monospace
+    line-height 20px
+    transition all 0.2s linear
+
+.body__card-container
+  display flex
+  justify-content center
+  width 100%
+  height 60%
+  perspective 500px
+
+.deck
+  position absolute
+  z-index 0
+  width 250px
+  height 250px
+  background #6b4923
+  //background url('../images/back.png')
+  border-radius 10px
+  transform translate(0,-8px) scale(0.95)
+
+.deck-bottom
+  background #4e3619
+  transform translate(0,-16px) scale(0.90)
+
+.playing-card-back
+  overflow hidden
+  position absolute
+  z-index 1
+  width 250px
+  height 250px
+  background #8b5f2d
+  //background url('../images/back.png')
+  border-radius 10px
+  backface-visibility hidden
+  animation flip-left 0.6s
+  //animation-fill-mode both
+
+.playing-card-image
+  pointer-events none
+
+.playing-card
+  overflow hidden
+  position absolute
+  z-index 2
+  width 250px
+  height 250px
+  background orangered
+  border-radius 10px
+  //box-shadow 0px 2px 4px rgba(0,0,0,0.4)
+  backface-visibility hidden
+  animation flip-back-left 0.6s
+  //animation-fill-mode both
+  .response-yes,
+  .response-no
+    display none
+    overflow hidden
+    position absolute
+    top -20px
+    left -20px
+    width calc(100% + 40px)
+    height 128px
+    padding 40px 36px 10px 36px
+    border-radius 10px 10px 0 0
+    background rgba(0,0,0,0.5)
+    color #FFF
+    opacity 1
+    line-height @height
+    text-align left
+    transform translate3d(0, -128px, 0)
+    pointer-events none
+  .response-yes
+    text-align left
+  .response-no
+    text-align right
+
+
+.body__card-name
+  width 100%
+  height 10%
+  padding 4px 16px 0 16px
+  font-size 16px
+  font-weight 600
+  font-family "Courier New", Courier, monospace
+  line-height 40px
+  text-align center

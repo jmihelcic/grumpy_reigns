@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  #screen
+    .screen-header
+      .header__icon-hp
+      .header__icon-stomach
+      .header__icon-visibility
+      .header__icon-backpack
+    .screen-body
+      .body__card-description
+        span.card-description__text I want your food. And I want it now!
+      .body__card-container
+        .deck.deck-bottom
+        .deck
+        .playing-card-back
+        .playing-card
+          .response-yes Ok.
+          .response-no Nope.
+          img.playing-card-image(src='images/grumpy.svg' width='270px' height='300px')
+      .body__card-name
+        span.card-name__text Grumpy Grumpalot
+    .screen-footer
+      .footer__icon-slot1
+      .footer__icon-slot2
+      .footer__icon-slot3
+      .footer__icon-slot4

@@ -1,0 +1,46 @@
+@import 'nib'
+
+*
+  box-sizing border-box
+  user-select none
+
+html, body
+  width 100%
+  height 100%
+  padding 0
+  margin 0
+  //font-family Arial, Helvetica, sans-serif
+  font-family "Courier New", Courier, monospace
+  overflow hidden // Disables "pull to refresh"
+
+// Main containers
+#screen
+  overflow hidden
+  position absolute
+  width 100%
+  height 100%
+
+.screen-header
+  overflow hidden
+  position relative
+  width 100%
+  height 96px
+  background #241403
+
+.screen-body
+  overflow hidden
+  position relative
+  width 100%
+  height calc(100% - 152px)
+  background #bda863
+
+.screen-footer
+  overflow hidden
+  position relative
+  width 100%
+  height 56px
+  background #241403
+  pointer-events none
+
+// Card container
+@require '../components/card/card.styl'
